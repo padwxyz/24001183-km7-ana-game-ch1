@@ -4,164 +4,297 @@ body,
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: 'Helvetica', serif;
+  font-family: "Helvetica", serif;
+  overflow-x: hidden;
 }
 
 :root {
-    --pr-color: #0D28A6;
-    --btn-color: #5CB85F;
+  --Primary-DarkBlue-01: #cfd4ed;
+  --Primary-DarkBlue-02: #aeb7e1;
+  --Primary-DarkBlue-03: #5e70c4;
+  --Primary-DarkBlue-04: #0d28a6;
+  --Primary-DarkBlue-05: #091b6f;
+
+  --Primary-LimeGreen-01: #def1df;
+  --Primary-LimeGreen-02: #c9e7ca;
+  --Primary-LimeGreen-03: #92d094;
+  --Primary-LimeGreen-04: #5cb85f;
+  --Primary-LimeGreen-05: #3d7b3f;
+
+  --Neutral-01: #ffffff;
+  --Neutral-02: #d0d0d0;
+  --Neutral-03: #8a8a8a;
+  --Neutral-04: #3c3c3c;
+  --Neutral-05: #151515;
+
+  --Alert-Danger: #fa2c5a;
+  --Alert-Warning: #f9cc00;
+  --Alert-Success: #73ca5c;
+
+  --Font-Heading-01: 36px;
+  --Font-Heading-02: 24px;
+  --Font-Heading-03: 20px;
+
+  --Font-Title-01: 18px;
+  --Font-Title-02: 16px;
+
+  --Font-Body-01: 14px;
+  --Font-Body-02: 12px;
+  --Font-Body-03: 10px;
+
+  --Shadow-Low: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  --Shadow-High: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-@font-face {
-    font-family: 'Helvetica';
-    src: url('./public/assets/font/halvetica/Helvetica.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
 h1 {
-    font-size: 36px;
+  font-size: var(--Font-Heading-01);
 }
 
 h2 {
-    font-size: 24px;
+  font-size: var(--Font-Heading-02);
 }
 
 h3 {
-    font-size: 16px;
+  font-size: var(--Font-Title-02);
 }
 
 p {
-    font-size: 14px;
+  font-size: var(--Font-Body-01);
 }
 
-li {
-    list-style: none;
-    font-size: 14px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
 }
 
 a {
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
 }
 
-.rent-btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 2px;
-    font-size: 14px;
-    background: var(--btn-color);
+@font-face {
+  font-family: "Helvetica";
+  src: url("./public/assets/font/halvetica/Helvetica.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 2px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background: var(--Primary-LimeGreen-04);
+  color: var(--Neutral-01);
 }
 
 /* navbar */
-.nav-link {
-    margin-right: 32px;
+#Navbar {
+  z-index: 3;
+  min-height: 75px;
+  max-width: 100vw;
 }
 
-/* hero section */
+.navbar-brand {
+  width: 100px;
+  height: 34px;
+  flex-shrink: 0;
+  background: var(--Primary-DarkBlue-04);
+}
+
+.nav-link {
+  margin-right: 32px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--Primary-LimeGreen-04);
+}
+
+.offcanvas {
+  max-width: 180px;
+  box-shadow: var(--Shadow-Low);
+}
+
+/* Hero Section */
 #Hero {
-    height: 100vh;
-    background-color: #F1F3FF;
-    margin-bottom: 100px;
+  background: #f1f3ff;
+  height: auto;
+  width: 100%;
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 75px;
 }
 
 .img-hero {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: right;
+  max-width: 704px;
+  min-height: 407px;
+  right: 0;
+  bottom: 0;
 }
 
-/* service section */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Service Section */
 #Service {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .img-service {
-    width: 459px;
-    height: 428px;
-    flex-shrink: 0;
+  max-width: 459px;
+  height: auto;
 }
 
-/* why us section */
+/* Why Us Section */
 #Whyus {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
-.row {
-    padding-top: 40px;
+.whyus-tagline {
+  margin-bottom: 40px;
 }
 
 .whyus-card {
-    height: 196px;
-    border-radius: 8px;
-    border: 1px solid #D0D0D0;
+  max-width: 268px;
+  min-height: 196px;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-02);
+}
+
+.gap-whyus {
+  gap: 32px;
 }
 
 /* tentimonial section */
 #Testimonial {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .img-carousel {
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
+  min-height: 60px;
+  max-width: 60px;
+  object-fit: cover;
 }
 
 .carousel-inner {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .carousel-item {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 .card {
-    background-color: #F1F3FF;
-    width: 619px;
-    height: 270px;
-    padding-top: 69px;
-    padding-bottom: 69px;
-    padding-right: 32px;
-    padding-left: 32px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  background-color: #f1f3ff;
+  max-width: 619px;
+  min-height: 270px;
+  padding-top: 69px;
+  padding-bottom: 69px;
+  padding-right: 32px;
+  padding-left: 32px;
+  border-radius: 8px;
+  box-shadow: var(--Shadow-Low);
+}
+
+.carousel-btn {
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel-control-next {
+  right: 530px;
+}
+
+.carousel-control-prev {
+  left: 530px;
 }
 
 /* rent section */
 #Rent {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
-.rent-container {
-    background-color: var(--pr-color);
-    border-radius: 13px;
-    padding-top: 64px;
-    padding-bottom: 64px;
+.container-rent {
+  min-height: 326px;
+  border-radius: 13px;
+  background: var(--Primary-DarkBlue-04);
 }
 
-.rent-container p {
-    margin-bottom: 52px;
+.rent-tagline {
+  padding: 64px;
+}
+
+.rent-tagline p {
+  margin-bottom: 52px;
 }
 
 /* faq section */
 #Faq {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .accordion-item {
-    width: 668px;
-    border-radius: 4px;
-    border: 1px solid #D4D4D4;
+  max-width: 668px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
 }
 
 .mb-faq-content {
-    margin-bottom: 150px;
+  margin-bottom: 150px;
 }
 
 /* footer section */
 #Footer {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+/* Responsicve */
+/* mobile view */
+@media (max-width: 500px) {
+  /* Hero Section */
+  #Hero {
+    min-height: 657px;
+  }
+
+  .img-hero {
+    max-width: 437px;
+    min-height: 122px;
+    right: 0;
+  }
+
+  /* Service Section */
+  .img-service {
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+  /* Whyus Section */
+  .whyus-card {
+    max-width: 328px;
+    min-height: 176px;
+  }
+
+  /* Footer Section */
+  .cr-footer {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: none !important;
+  }
+
+  .navbar-toggler {
+    display: inline-block;
+  }
 }
